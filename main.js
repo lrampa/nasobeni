@@ -3,8 +3,8 @@ var factor2Digits = 2;
 
 window.onload = function() {
 
-    var factor1 = Math.floor(Math.random() * Math.pow(10, factor1Digits));
-    var factor2 = Math.floor(Math.random() * Math.pow(10, factor2Digits));
+    var factor1 = getRandomInt(1, Math.pow(10, factor1Digits) - 1);
+    var factor2 = getRandomInt(1, Math.pow(10, factor2Digits) - 1);
     var result = factor1 * factor2;
 
     var factor1Array = String(factor1).split('');
@@ -102,3 +102,8 @@ window.onload = function() {
         };
     });
 };
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
