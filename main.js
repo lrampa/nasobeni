@@ -87,7 +87,7 @@ window.onload = function() {
     var inputs = [].slice.call(document.querySelectorAll('input'));
 
     inputs.forEach(function(elm) {
-        elm.onkeyup = function() {
+        elm.oninput = function() {
             if (this.value === '') {
                 this.classList.toggle('wrong', false);
                 return;
@@ -98,6 +98,10 @@ window.onload = function() {
                 return;
             } else {
                 this.classList.toggle('wrong', false);
+                var td = this.parentElement;
+                var prevTd = td.previousElementSibling;
+                var prevInput = prevTd.querySelector('input');
+                prevInput.focus();
             }
         };
     });
