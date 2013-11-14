@@ -3,8 +3,8 @@ var factor2Digits = 2;
 
 window.onload = function() {
 
-    var factor1 = getRandomInt(1, Math.pow(10, factor1Digits) - 1);
-    var factor2 = getRandomInt(1, Math.pow(10, factor2Digits) - 1);
+    var factor1 = getRandomInt(Math.pow(10, factor1Digits - 1), Math.pow(10, factor1Digits) - 1);
+    var factor2 = getRandomInt(Math.pow(10, factor2Digits - 1), Math.pow(10, factor2Digits) - 1);
     var result = factor1 * factor2;
 
     var factor1Array = String(factor1).split('');
@@ -101,6 +101,9 @@ window.onload = function() {
             }
         };
     });
+
+    var firstInput = document.querySelector('tr:nth-child(3) td:last-child input');
+    firstInput.focus();
 };
 
 function getRandomInt(min, max) {
